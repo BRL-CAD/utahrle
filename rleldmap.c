@@ -25,24 +25,21 @@
  * Copyright (c) 1986, Spencer W. Thomas
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"		/* For malloc, calloc, and free */
 #include "rle.h"
+
 
 void get_rle_map(rle_hdr *the_hdr, char *fname);
 void linmap(double factor, int nchan, int length, int range, rle_map **amap);
@@ -753,3 +750,13 @@ get_rle_map(rle_hdr *the_hdr, char *fname)
     if ( infile != stdin )
 	fclose( infile );
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

@@ -26,16 +26,13 @@
  * 
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
 
 
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
 
 void read_cubi_hdr(FILE **cubifiles, short int *xlen, short int *ylen);
@@ -169,3 +166,13 @@ bit_read(FILE *infile, char headchar, int bit, rle_pixel **rows, int chan, int *
 	(*xpos)++;
     }
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

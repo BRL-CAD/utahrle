@@ -19,19 +19,16 @@
  * Default is 4 (because that's what I needed.)
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <time.h>
 
 #include "machine.h"
-#include "externs.h"		/* For malloc and free */
 #include "rle.h"
+
 
 /* Change this according the value on your system.  This is a crock.
 #define	RANDOM_MAX	((double)(int)(((unsigned int)~0)>>1))
@@ -143,3 +140,13 @@ main(int argc, char **argv)
 
     exit( 0 );
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

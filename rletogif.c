@@ -28,23 +28,21 @@
  *************************************************************************
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
-#ifndef USE_STRING_H
+#ifndef HAVE_STRING_H
 #include <strings.h>
 #else
 #include <string.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"		/* For malloc and free */
 #include "rle.h"
+
 #include "./rletogif.h"
+
 
 const char *MY_NAME = "rletogif";
 
@@ -156,3 +154,13 @@ void error(char *s)
     fprintf(stderr,"%s\n", s);
     exit(2);
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

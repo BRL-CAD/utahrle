@@ -29,16 +29,11 @@
 static const char rcs_ident[] = "$Id$";
 #endif
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
-
-
+#include "common.h"
 
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
 
 char buffer[4096];
@@ -103,3 +98,13 @@ main(int argc, char **argv)
 
     exit( 0 );
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

@@ -26,22 +26,17 @@
  * Copyright (C) 1990, Craig E. Kolb
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
-
-
+#include "common.h"
 
 #include <stdio.h>
 
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
 
 #define LEFTSCALE	0.7		/* Default left scale factor. */
@@ -272,3 +267,13 @@ convert_line(rle_pixel **out, rle_pixel **left, rle_pixel **right)
 				right[rchan1][i], right[rchan2][i], rmap);
 	}
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

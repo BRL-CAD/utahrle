@@ -10,17 +10,14 @@
  * Interface routines for Utah Raster Toolkit
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
+
 
 /*
  * Globals are stored in a structure.
@@ -102,3 +99,13 @@ rasterDone(void)
 {
     rle_puteof(&rle_dflt_hdr);
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

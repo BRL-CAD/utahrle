@@ -36,17 +36,14 @@
 static const char rcs_ident[] = "$Id$";
 #endif
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
+
 
 #define MALLOC_ERR {fprintf(stderr, "%s: ran out of heap space\n", \
 			    progname);exit(-2);}
@@ -556,3 +553,13 @@ find_closest(rle_map **map, int nchan, int maplen, rle_pixel *pixel, int *index)
     }
     *index = closest;
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

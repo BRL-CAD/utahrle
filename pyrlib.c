@@ -12,18 +12,15 @@
 static const char rcs_ident[] = "$Id$";
 #endif
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
 #include "pyramid.h"
+
 
 void extrap_level(int level, pyramid *pyr), extrap_int_level(int level, int **corners, int xlen, int ylen, int nchan);
 void alloc_pyramid(pyramid *pyr), gauss_level(int level, pyramid *pyr, float *mask_mult_table), band_level(int level, pyramid *bandpyr, pyramid *gausspyr, float *mask_mult_table), expand_level(int level, pyramid *gausspyr, rle_pixel **corner, float *mask_mult_table);
@@ -999,3 +996,13 @@ add_int_level(int level, int **intcorners, int xlen, int ylen, int nchan, float 
     }
 }
 
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

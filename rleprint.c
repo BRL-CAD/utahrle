@@ -25,16 +25,11 @@
  * Copyright (c) 1990, University of Michigan
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
-
-
+#include "common.h"
 
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
 
 #define MALLOC_ERR {fprintf(stderr, "%s: ran out of heap space\n", \
@@ -83,3 +78,13 @@ main(int argc, char **argv)
 
     exit( 0 );
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

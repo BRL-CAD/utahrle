@@ -38,24 +38,21 @@
  * the last line (in the file) as the upper left of the image.
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <sys/types.h>
 
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"			/* For malloc and free */
 #include "rle.h"
+
 
 /*
  * Description of header for files containing targa type 2 images
@@ -453,3 +450,13 @@ fsunput(float *fptr, struct fstruct *fsptr)
   ltmp |= fsptr->mant & 037777777L;
   *(unsigned long *) fptr = ltmp;
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

@@ -26,24 +26,21 @@
  * 
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"			/* For malloc and free */
 #include "rle.h"
+
 
 #define LINE_LENGTH 720
 #define FRAME_LENGTH 486
@@ -274,3 +271,13 @@ send_image (FILE *outfile)
 	fwrite( buf, 1, bp - buf, outfile );
     }
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

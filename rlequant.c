@@ -25,17 +25,14 @@
  * Copyright (c) 1990, University of Michigan
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"		/* For malloc and free */
 #include "rle.h"
+
 
 #define Quantize(x)	(x >> shift)
 
@@ -629,3 +626,13 @@ free_mem(rle_hdr *hdr, int dflag, rle_pixel *red, rle_pixel *green, rle_pixel *b
     rle_row_free( hdr, rows );
     free( outrows[1] );
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

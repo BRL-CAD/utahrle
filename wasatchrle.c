@@ -27,14 +27,10 @@
  * Thanks to Mike Ware of Wasatch for providing the format information.
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
-
-
+#include "common.h"
 
 #include <stdio.h>
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
@@ -43,7 +39,6 @@
 #include <errno.h>
 
 #include "machine.h"
-#include "externs.h"			/* For stdlib stuff */
 #include "rle.h"
 
 /* "short" in our world is 16 bits.  Beware of swyte-bopping. */
@@ -191,3 +186,13 @@ open_with_ext(char *basename, char *ext)
     return( f );
 }
     
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

@@ -29,24 +29,21 @@
  *    SIGGRAPH 84, p.255.
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
 #include "rle_code.h"
 #include "rle_raw.h"
+
 
 #ifndef MAX
 #define MAX(i,j)   ( (i) > (j) ? (i) : (j) )
@@ -571,3 +568,13 @@ copy_scanline(rle_hdr *in_hdr, rle_hdr *out_hdr, int ypos, int *num_skip, rle_op
     rle_freeraw( out_hdr, out_raw, out_nraw );
 }
 
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

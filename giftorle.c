@@ -21,22 +21,19 @@
 /* |   don't try to make money off it, or pretend that you wrote it.  | */
 /* +------------------------------------------------------------------+ */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
-#include	<stdio.h>
-#ifdef USE_STRING_H
+#include <stdlib.h>
+#include <stdio.h>
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
+
 
 #ifndef lint
 static const char rcsid[] = "$Id$";
@@ -565,3 +562,13 @@ ReadRaster(FILE *fd, int len, int height, unsigned char (*cmap)[MAXCOLORMAPSIZE]
 	return FALSE;
     return TRUE;
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

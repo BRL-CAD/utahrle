@@ -8,24 +8,21 @@
  * Copyright (c) 1987, University of Utah
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"		/* For calloc */
 #include "rle.h"
 #include "rle_code.h"
 #include "rle_raw.h"
+
 
 /*****************************************************************
  * TAG( main )
@@ -142,3 +139,13 @@ main(int argc, char **argv)
 
     exit( 0 );
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

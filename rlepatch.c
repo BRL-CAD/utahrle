@@ -28,23 +28,20 @@
  * routines someday - this would run MUCH faster for sparse patches.
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"		/* For malloc, calloc and free */
 #include "rle.h"
+
 
 #define CHECK_MALLOC( ptr ) \
 	{ if (! (ptr)) {fprintf( stderr, "%s: Unable to alloc memory\n", \
@@ -188,3 +185,13 @@ main(int argc, char **argv)
     }
     exit( 0 );
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

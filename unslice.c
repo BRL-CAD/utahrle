@@ -21,19 +21,16 @@
  * are thrown away.  The maximum y of the image must be specified this way.
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"		/* For malloc and free */
 #include "rle.h"
 #include "rle_code.h"
 #include "rle_raw.h"
+
 
 void do_slice(int num, char *filename);
 void copy_scanline(int ypos, int copy_flag);
@@ -293,3 +290,13 @@ copy_scanline(int ypos, int copy_flag)
 	rle_putraw( out_raw, out_nraw, &out_hdr );
     rle_freeraw( &out_hdr, out_raw, out_nraw );
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

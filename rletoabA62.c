@@ -37,23 +37,24 @@
  *	    point to arrays of unsigned char to hold the RGB values.
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
+#include "common.h"
+
+#ifdef HAVE_UNISTD_H
+# include <unistd.h>
 #endif
-
-
-
+                                                                                                                                                                            
+#include <stdlib.h>
 #include <stdio.h>
 
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"		/* For getopt */
 #include "rle.h"
+
 
 #ifndef TRUE
 #define TRUE 1
@@ -419,3 +420,13 @@ dump2(register yiq_t **raster, int start)
 	}
     }
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

@@ -45,17 +45,14 @@
  * pic.[000-100].[rgb]    :  cat pic.* | rawtorle -w ... -h ... -n 3 -s -r 
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
+
 
 /* hey.. why spin normally! */
 #define duff(counter, block) {\
@@ -343,3 +340,13 @@ main(int argc, char **argv)
     exit(0);
 }
 
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

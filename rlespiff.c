@@ -11,25 +11,22 @@
  *   Cliff Hathaway, University of Arizona Computer Science Dept. 082790
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"			/* For malloc, calloc, and free */
 #include "rle.h"
 #include "rle_code.h"
 #include "rle_raw.h"
+
 
 void copy_raw(rle_hdr *the_hdr, int y, rle_op **scan, int *nraw, rle_op ***save_scan, int **save_nraw);
 
@@ -337,3 +334,13 @@ malloc_err:
     perror( "" );
     exit( 1 );
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

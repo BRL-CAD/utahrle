@@ -32,18 +32,15 @@
 *
 */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"
 
 #include "./rletogif.h"
+
 
 #define MAXIMUMCODE 4095   /* 2**maximum_code_size */
 #define BLOCKSIZE 256   /* max block byte count + 1 */
@@ -235,3 +232,13 @@ int pack_bits(int compress_size, int prefix, FILE *os)
 }
 
 /* end of compgif.c */
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

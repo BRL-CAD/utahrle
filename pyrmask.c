@@ -12,18 +12,15 @@
 static const char rcs_ident[] = "$Header$";
 #endif
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
 #include "pyramid.h"
+
 
 int rle_to_pyramids(FILE *infile, pyramid *gausspyr, pyramid *bandpyr, rle_hdr *in_hdr, int levellimit, float *mask_mult_table);
 void alloc_pyramid(pyramid *pyr);
@@ -364,3 +361,13 @@ copy_mask_bands(int level, pyramid *leftbandpyr, pyramid *rightbandpyr, pyramid 
 	}
     }
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */

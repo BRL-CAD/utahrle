@@ -28,28 +28,26 @@
  *	font.src derived from NBS fonts.
  */
 
-#ifdef HAVE_CONFIG_H
-# include "config.h"
-#endif
+#include "common.h"
 
-
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <ctype.h>
 #include <sys/types.h>
 #include <time.h>
 
-#ifdef USE_STRING_H
+#ifdef HAVE_STRING_H
 #include <string.h>
 #else
 #include <strings.h>
 #endif
 
 #include "machine.h"
-#include "externs.h"
 #include "rle.h"
+
 #include "./font.h"
+
 
 /*
  * Type definitions
@@ -920,3 +918,13 @@ stackPop(void)
 	Stack.top -= 1;
 	return Stack.top < 0;
 }
+
+/*
+ * Local Variables:
+ * mode: C
+ * tab-width: 8
+ * c-basic-offset: 4
+ * indent-tabs-mode: t
+ * End:
+ * ex: shiftwidth=4 tabstop=8
+ */
