@@ -28,6 +28,9 @@
  * $Id$
  *
  * $Log$
+ * Revision 11.7  2004/05/10 15:30:47  erikg
+ * change conf.h to a wrapped config.h
+ *
  * Revision 11.6  2004/04/05 07:40:44  morrison
  * merge of ansi-6-0-branch into HEAD
  *
