@@ -1,0 +1,75 @@
+When migrating the utahrle commit history from BRL-CAD's SVN repository to
+the utahrle git archive, these were the steps:
+
+1.  Make sure svn2git is installed, as well as subversion and git (enable git subversion support if not already present.)
+
+2.  Obtain local copy of BRL-CAD svn repository:
+
+mkdir brlcad-svn
+cd brlcad-svn
+rsync -av brlcad.svn.sourceforge.net::svn/brlcad/* .
+cd ..
+
+3.  create identity map between svn committers and git committers
+
+file: account-map
+morrison Christopher Sean Morrison <morrison@brlcad.org>
+brlcad Christopher Sean Morrison <morrison@brlcad.org>
+erikg Erik Greenwald <erikg@arl.army.mil>
+erikgreenwald Erik Greenwald <erikg@arl.army.mil>
+kermit Charles Kennedy <kermit@brlcad.org>
+lbutler Lee Butler <butler@arl.army.mil>
+butler Lee Butler <butler@arl.army.mil>
+bob1961 Robert Parker <bobparker@brlcad.org>
+bparker Robert Parker <bobparker@brlcad.org>
+starseeker Clifford Yapp <cliffyapp@gmail.com>
+jra John Anderson <jra@arl.army.mil>
+hartley Robert Hartley <hartley@vt.edu>
+mike Michael John Muuss <mike@BMD70>
+gdurf Glenn Durfee <gdurfee@brlcad.org>
+stay Paul Stay <pstay@brlcad.org>
+
+4.  create svn2git filtering rules to capture the utahrle history 
+
+file: rules.urt
+create repository utahrle
+end repository
+
+match /brlcad/trunk/libutahrle/
+   min revision 1
+   max revision 22796
+   repository utahrle
+   branch master
+end match
+
+match /brlcad/trunk/tools/
+   min revision 1
+   max revision 22814
+   repository utahrle
+   branch master
+end match
+
+match /brlcad/trunk/src/other/libutahrle/
+   min revision 22797
+   repository utahrle
+   branch master
+end match
+
+
+match /brlcad/trunk/src/other/URToolkit/
+   min revision 22815
+   repository utahrle
+   branch master
+end match
+
+match /
+end match
+
+5.  Run svn2git to generate archive:
+
+svn2git --identity-map account-map --rules rules.urt brlcad_svn
+
+6.  utahrle holds the resultant git repository. Use gitk to check
+that the history we expect to see is actually present, then use
+standard sourceforge procedures for loading an existing git repository
+onto the website.
