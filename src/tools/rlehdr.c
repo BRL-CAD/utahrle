@@ -34,7 +34,7 @@ rlehdr()			Tag the file.
 #include <stdlib.h>
 #include <stdio.h>
 #include "rle.h"
-#include "../patchlevel.h"
+#include "rle_config.h"
 
 /* Utah Raster Toolkit major version number. */
 #define URT_VERSION 	3.0

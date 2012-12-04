@@ -3,5 +3,4 @@ include_directories(
 	${CMAKE_CURRENT_SOURCE_DIR}
 	)
 
-add_executable(rleCLock rleClock.c font.c)
-target_link_libraries(rleCLock utahrle)
+URT_EXEC(rleCLock "rleClock.c;font.c")

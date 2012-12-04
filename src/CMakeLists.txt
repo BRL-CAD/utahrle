@@ -3,6 +3,15 @@ include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
   )
 
+if(MSVC)
+  add_definitions(
+    -DRLE_DLL_EXPORTS
+    -DNO_DECLARE_MALLOC
+    -DNEED_BSTRING
+    -DNO_OPEN_PIPES
+    )
+endif(MSVC)
+
 SET(LIBUTAHRLE_SOURCES
   Runput.c
   buildmap.c
@@ -48,6 +57,8 @@ install(TARGETS utahrle-static
 if(NOT WIN32)
   set_target_properties(utahrle-static PROPERTIES OUTPUT_NAME "utahrle")
 endif(NOT WIN32)
+
+set(UTAHRLE_LIBRARY utahrle)
 
 add_subdirectory(tools)
 add_subdirectory(cnv)

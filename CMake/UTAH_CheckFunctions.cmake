@@ -1,13 +1,20 @@
-INCLUDE(CheckLibraryExists)
-INCLUDE(ResolveCompilerPaths)
+include(CheckLibraryExists)
+include(ResolveCompilerPaths)
 
-MACRO(UTAH_CHECK_LIBRARY targetname lname func)
-	IF(NOT ${targetname}_LIBRARY)
-		CHECK_LIBRARY_EXISTS(${lname} ${func} "" HAVE_${targetname}_${lname})
-		IF(HAVE_${targetname}_${lname})
-			RESOLVE_LIBRARIES (${targetname}_LIBRARY "-l${lname}")
-			SET(${targetname}_LINKOPT "-l${lname}" CACHE STRING "${targetname} link option")
-			MARK_AS_ADVANCED(${targetname}_LINKOPT)
-		ENDIF(HAVE_${targetname}_${lname})
-	ENDIF(NOT ${targetname}_LIBRARY)
-ENDMACRO(UTAH_CHECK_LIBRARY lname func)
+macro(UTAH_CHECK_LIBRARY targetname lname func)
+  if(NOT ${targetname}_LIBRARY)
+    CHECK_LIBRARY_EXISTS(${lname} ${func} "" HAVE_${targetname}_${lname})
+    if(HAVE_${targetname}_${lname})
+      RESOLVE_LIBRARIES (${targetname}_LIBRARY "-l${lname}")
+      set(${targetname}_LINKOPT "-l${lname}" CACHE STRING "${targetname} link option")
+      mark_as_advanced(${targetname}_LINKOPT)
+    endif(HAVE_${targetname}_${lname})
+  endif(NOT ${targetname}_LIBRARY)
+endmacro(UTAH_CHECK_LIBRARY lname func)
+
+# Local Variables: 
+# tab-width: 8 
+# mode: cmake 
+# indent-tabs-mode: t 
+# End: 
+# ex: shiftwidth=2 tabstop=8

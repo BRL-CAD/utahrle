@@ -55,22 +55,10 @@ if(NOT LIB_DIR)
   set(LIB_DIR lib)
 endif(NOT LIB_DIR)
 
-
 include(UTAH_CheckFunctions)
+UTAH_CHECK_LIBRARY(M m cos)
 
-IF(NOT WIN32)
-  UTAH_CHECK_LIBRARY(M m cos)
-ENDIF(NOT WIN32)
-
-if(MSVC)
-  add_definitions(
-    -DRLE_DLL_EXPORTS
-    -DNO_DECLARE_MALLOC
-    -DNEED_BSTRING
-    -DNO_OPEN_PIPES
-    )
-endif(MSVC)
-
+include(UTAH_Targets)
 add_subdirectory(include)
 add_subdirectory(src)
 add_subdirectory(doc)

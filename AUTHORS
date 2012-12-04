@@ -1,3 +1,8 @@
+The UtahRLE code base is quite old - the current project and its
+maintainers are merely the latest in a long history of contributors
+to the toolkit.  The Original Authors are (based on URT's
+documentation:)
+
 Spencer W. Thomas
 EECS Department
 University of Michigan
@@ -27,3 +32,19 @@ totally revamped the 'getx11' program, so that it now works correctly,
 and is the most featurful of all the toolkit programs.
 
 
+More recent contributions have come from a wide variety of developers.
+From the BRL-CAD development team, we have (apologies to anyone I missed):
+
+Christopher Sean Morrison
+Erik Greenwald
+Charles Kennedy
+Lee Butler
+Robert Parker
+Clifford Yapp
+John Anderson
+Robert Hartley
+Michael John Muuss
+Glenn Durfee
+Paul Stay
+
+TODO - collect patches and their authors if there are more to be had.
