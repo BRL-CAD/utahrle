@@ -122,10 +122,4 @@ extern char *getenv();
 #   define setlinebuf( _s )	setvbuf( (_s), NULL, _IOLBF, 0 )
 #endif
 
-/* include common.h so that HAVE_ symbols may be used to work around
- * compilation support issues.  e.g. sys_errlist on solaris.
- */
-
-#include "common.h"
-
 /** @} */

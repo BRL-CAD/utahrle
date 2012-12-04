@@ -49,6 +49,9 @@ if(NOT WIN32)
   set_target_properties(utahrle-static PROPERTIES OUTPUT_NAME "utahrle")
 endif(NOT WIN32)
 
+add_subdirectory(tools)
+add_subdirectory(cnv)
+
 # Local Variables:
 # tab-width: 8
 # mode: cmake

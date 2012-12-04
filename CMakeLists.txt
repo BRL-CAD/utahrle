@@ -46,6 +46,16 @@ set(CMAKE_INSTALL_NAME_DIR "${CMAKE_INSTALL_PREFIX}/lib")
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 
+# Set directory variables
+if(NOT BIN_DIR)
+  set(BIN_DIR bin)
+endif(NOT BIN_DIR)
+
+if(NOT LIB_DIR)
+  set(LIB_DIR lib)
+endif(NOT LIB_DIR)
+
+
 include(UTAH_CheckFunctions)
 
 IF(NOT WIN32)
