@@ -3,11 +3,14 @@ the utahrle git archive, these were the steps:
 
 1.  Make sure svn2git is installed, as well as subversion and git (enable git subversion support if not already present.)
 
-For a Debian system, this is probably the easiest way:
+Note that there are multiple programs called svn2git - the one
+used here is the one at:
 
-sudo apt-get install git-core git-svn ruby rubygems
-sudo gem install svn2git
+http://www.gitorious.org/svn2git
 
+This article from KDE got me started:
+
+http://techbase.kde.org/Projects/MoveToGit/UsingSvn2Git
 
 2.  Obtain local copy of BRL-CAD svn repository:
 
@@ -71,9 +74,9 @@ end match
 match /
 end match
 
-5.  Run svn2git to generate archive:
+5.  Run svn-all-fast-export to generate archive:
 
-svn2git --identity-map account-map --rules rules.urt brlcad_svn
+svn-all-fast-export --identity-map account-map --rules rules.urt brlcad_svn
 
 6.  utahrle holds the resultant git repository. Use gitk to check
 that the history we expect to see is actually present, then use
