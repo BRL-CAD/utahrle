@@ -3,6 +3,12 @@ the utahrle git archive, these were the steps:
 
 1.  Make sure svn2git is installed, as well as subversion and git (enable git subversion support if not already present.)
 
+For a Debian system, this is probably the easiest way:
+
+sudo apt-get install git-core git-svn ruby rubygems
+sudo gem install svn2git
+
+
 2.  Obtain local copy of BRL-CAD svn repository:
 
 mkdir brlcad-svn
