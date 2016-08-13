@@ -1,12 +1,9 @@
 include_directories(
-	${UTAHRLE_INCLUDE_DIR}
-	${${CMAKE_PROJECT_NAME}_SOURCE_DIR}/include
+   ${CMAKE_CURRENT_SOURCE_DIR}/../../include
 	${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 add_subdirectory(clock)
-
-MESSAGE("utah library: ${UTAH_LIBRARY}")
 
 URT_EXEC(applymap applymap.c)
 URT_EXEC(avg4 avg4.c)

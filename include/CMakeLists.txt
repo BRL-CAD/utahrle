@@ -1,16 +1,20 @@
-SET(LIBUTAHRLE_PUBLIC_HDRS
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/exit_status.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/pyramid.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/rle.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/rle_code.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/rle_config.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/rle_put.h
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/rle_raw.h
+set(LIBUTAHRLE_PUBLIC_HDRS
+  exit_status.h
+  pyramid.h
+  rle.h
+  rle_code.h
+  rle_config.h
+  rle_put.h
+  rle_raw.h
   )
 
-SET(LIBUTAHRLE_PRIVATE_HDRS
-  ${CMAKE_CURRENT_SOURCE_DIR}/include/colorquant.h
+set(LIBUTAHRLE_PRIVATE_HDRS
+  colorquant.h
   )
+
+if(NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL)
+  install(FILES ${LIBUTAHRLE_PUBLIC_HDRS} DESTINATION include)
+endif(NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL)
 
 # Local Variables:
 # tab-width: 8

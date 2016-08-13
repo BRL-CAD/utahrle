@@ -1,5 +1,4 @@
-
-SET(URT_MANS
+set(URT_MAN1S
 	aliastorle.1
 	applymap.1
 	avg4.1
@@ -8,7 +7,6 @@ SET(URT_MANS
 	dvirle.1
 	fant.1
 	get4d.1
-	get_orion.1
 	getami.1
 	getap.1
 	getbob.1
@@ -18,6 +16,7 @@ SET(URT_MANS
 	getiris.1
 	getmac.1
 	getmex.1
+	get_orion.1
 	getqcr.1
 	getren.1
 	getsun.1
@@ -38,13 +37,13 @@ SET(URT_MANS
 	read98721.1
 	repos.1
 	rlatorle.1
-	rleClock.1
 	rleaddcom.1
 	rleaddeof.1
 	rlebg.1
 	rlebox.1
 	rlecat.1
 	rleccube.1
+	rleClock.1
 	rlecomp.1
 	rledither.1
 	rleflip.1
@@ -94,5 +93,6 @@ SET(URT_MANS
 	unslice.1
 	urt.1
 	wasatchrle.1
-)
-install(FILES ${URT_MANS} DESTINATION ${MAN_DIR}/man1)
+	)
+install(FILES ${URT_MAN1S} DESTINATION ${MAN_DIR}/man1)
+
