@@ -43,6 +43,11 @@ cmake_minimum_required(VERSION 2.8)
 if(COMMAND CMAKE_POLICY)
   CMAKE_POLICY(SET CMP0003 NEW)
 endif(COMMAND CMAKE_POLICY)
+IF(COMMAND CMAKE_POLICY)
+  if ("${CMAKE_VERSION}" VERSION_GREATER 2.99)
+    CMAKE_POLICY(SET CMP0026 OLD)
+  endif ("${CMAKE_VERSION}" VERSION_GREATER 2.99)
+ENDIF(COMMAND CMAKE_POLICY)
 
 #---------------------------------------------------------------------
 # The following logic is what allows binaries to run successfully in
