@@ -36,12 +36,6 @@
 # This file contains the top level CMakeLists.txt logic for the
 # Utah Raster Toolkit software package.
 
-if(COMMAND CMAKE_POLICY)
-  if ("${CMAKE_VERSION}" VERSION_GREATER 2.99)
-    CMAKE_POLICY(SET CMP0026 OLD)
-  endif ("${CMAKE_VERSION}" VERSION_GREATER 2.99)
-endif(COMMAND CMAKE_POLICY)
-
 project(UTAHRLE)
 
 # Minimum required version of CMake
