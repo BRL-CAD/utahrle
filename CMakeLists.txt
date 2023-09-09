@@ -148,7 +148,7 @@ if(BUILD_STATIC_LIBS)
     ARCHIVE DESTINATION ${LIB_DIR})
 endif(BUILD_STATIC_LIBS)
 
-install(FILES ${LIBUTAHRLE_PUBLIC_HDRS} DESTINATION include)
+install(FILES ${LIBUTAHRLE_PUBLIC_HDRS} DESTINATION include/utahrle)
 
 # Local Variables:
 # tab-width: 8
