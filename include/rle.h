@@ -46,13 +46,23 @@
 #define CONST_DECL
 #endif
 
+#ifndef COMPILER_DLLEXPORT
+# if defined(_WIN32)
+#  define COMPILER_DLLEXPORT __declspec(dllexport)
+#  define COMPILER_DLLIMPORT __declspec(dllimport)
+# else
+#  define COMPILER_DLLEXPORT __attribute__ ((visibility ("default")))
+#  define COMPILER_DLLIMPORT __attribute__ ((visibility ("default")))
+# endif
+#endif
+
 #ifndef RLE_EXPORT
 #  if defined(RLE_DLL_EXPORTS) && defined(RLE_DLL_IMPORTS)
 #    error "Only RLE_DLL_EXPORTS or RLE_DLL_IMPORTS can be defined, not both."
 #  elif defined(RLE_DLL_EXPORTS)
-#    define RLE_EXPORT __declspec(dllexport)
+#    define RLE_EXPORT COMPILER_DLLEXPORT
 #  elif defined(RLE_DLL_IMPORTS)
-#    define RLE_EXPORT __declspec(dllimport)
+#    define RLE_EXPORT COMPILER_DLLIMPORT
 #  else
 #    define RLE_EXPORT
 #  endif
